@@ -1,0 +1,5 @@
+enum Kategorijos {
+
+  IŠLAIDOS,PAJAMOS;
+
+}
