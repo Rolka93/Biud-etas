@@ -3,11 +3,12 @@ import java.util.Scanner;
 
 public class Main {
     private boolean exit;
-
+    Scanner kb = new Scanner(System.in);
+    private Suvestinė suvestinė;
 
 
     public static void main(String[] args) {
-        Menu menu = new Menu();
+        Main menu = new Main();
         menu.runMenu();
 
     }
@@ -35,13 +36,19 @@ public class Main {
         System.out.println("1)Kategorijos");
         System.out.println("2)Įrašas");
         System.out.println("3)Suvestinė");
+        System.out.println("4)Įvesti išlaidas");
+        System.out.println("5)Įvesti pajamas");
+        System.out.println("6)Redeguoti išlaidas");
+        System.out.println("7)Rdeguoti pajamas");
+        System.out.println("8)Ištrinti išlaidas");
+        System.out.println("9}Ištrinti pajamas");
         System.out.println("0)Exit");
     }
 
     private int getInput() {
-        Scanner kb = new Scanner(System.in);
+
         int choice = -1;
-        while (choice < 0 || choice > 3) {
+        while (choice < 0 || choice > 5) {
             try {
                 choice = Integer.parseInt(kb.nextLine());
             } catch (NumberFormatException e) {
@@ -66,6 +73,10 @@ public class Main {
             case 3:
                 System.out.println("Suvestinė");
                 break;
+            case 4:
+                įvestiišlaidas();
+            case 5:
+                įvestipajamas();
             default:
                 System.out.println("An unknown error has occured");
         }
@@ -148,7 +159,19 @@ public class Main {
                 System.out.println("Invalid selection.Please try again");
 
         }
+    }
+    private void įvestiišlaidas(){
+        System.out.println("Iveskite išlaidas:");
+       int išlaidos = kb.nextInt();
+       suvestinė.setMėnesioIšlaidos(suvestinė.getMėnesioIšlaidos() + išlaidos);
 
     }
+    private void įvestipajamas(){
+        System.out.println("Įveskite pajamas");
+        int pajamos = kb.nextInt();
+        suvestinė.setMėnesioIšlaidos(suvestinė.getMėnesioPajamos() + pajamos);
+
+    }
+
 }
 
