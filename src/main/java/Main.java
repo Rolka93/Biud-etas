@@ -112,27 +112,6 @@ public class Main {
 
     private void pickIšlaidųKategorija() {
         System.out.println("Pick comes category");
-        System.out.println("0)Atlyginimas");
-        System.out.println("1)Kita");
-        System.out.println("2)Pardavimas");
-        int num = getInput();
-        switch (num) {
-            case 0:
-                System.out.println("Atlyginimas");
-                break;
-            case 1:
-                System.out.println("Kita");
-                break;
-            case 2:
-                System.out.println("Pardavimas");
-                break;
-            default:
-                System.out.println("Invalid selection.Please try again");
-        }
-    }
-
-    private void pickPajamųKategoriją() {
-        System.out.println("Pick income category");
         System.out.println("0)Drabužiai");
         System.out.println("1)Maistas ir gėrimai");
         System.out.println("2)Namams");
@@ -169,12 +148,33 @@ public class Main {
         }
     }
 
+    private void pickPajamųKategoriją() {
+        System.out.println("Pick Incomes category");
+        System.out.println("0)Atlyginimas");
+        System.out.println("1)Kita");
+        System.out.println("2)Pardavimas");
+        int num = getInput();
+        switch (num) {
+            case 0:
+                System.out.println("Atlyginimas");
+                break;
+            case 1:
+                System.out.println("Kita");
+                break;
+            case 2:
+                System.out.println("Pardavimas");
+                break;
+            default:
+                System.out.println("Invalid selection.Please try again");
+        }
+    }
+
     private void įvestiišlaidas() {
         System.out.println("Iveskite išlaidas:");
         int išlaidos = kb.nextInt();
         suvestinė.setMėnesioIšlaidos(suvestinė.getMėnesioIšlaidos() + išlaidos);
-
     }
+
 
     private void įvestipajamas() {
         System.out.println("Įveskite pajamas");
@@ -184,7 +184,7 @@ public class Main {
     }
 
     private void redeguotišlaidas() {
-        System.out.println("Pasirinkite išlaidų kategoriją,kurią norite redaguoti:? ");
+        System.out.println("Pasirinkite išlaidų kategoriją,kurią norite redaguoti: ");
         int num = getInput();
         switch (num) {
             case 0:
@@ -216,15 +216,19 @@ public class Main {
 
     private void redeguotipajamas() {
         System.out.println("Pasirinkite pajamų kategorją,kurią norite redeguoti:");
+        System.out.println("0)Atlyginimas");
+        System.out.println("1)Kita");
+        System.out.println("2)Pardavimas");
         int num = getInput();
         switch (num) {
             case 0:
-                System.out.println("Išlaidos");
-                pickIšlaidųKategorija();
+                System.out.println("Atlyginimas");
                 break;
             case 1:
-                System.out.println("Pajamos");
-                pickPajamųKategoriją();
+                System.out.println("Kita");
+                break;
+            case 2:
+                System.out.println("Pardavimas");
                 break;
             default:
                 System.out.println("Invalid selection.Please try again");
@@ -243,4 +247,3 @@ public class Main {
 }
 
 
-    }
